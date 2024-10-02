@@ -1,0 +1,36 @@
+{
+    "title": "Company Name",
+    "subtitle": "Team Name",
+    "environments": {
+        "test": [
+            {
+                "name": "grafana",
+                "url": "http://test.grafana.example.com"
+            },
+            {
+                "name": "alertmanager",
+                "url": "http://test.alertmanager.example.com"
+            },
+            {
+                "name": "pgadmin",
+                "url": "http://10.121.10.11"
+            }
+        ],
+        "preprod": [
+            {
+                "name": "dozzle",
+                "url": "http://10.121.110.15"
+            },
+            {
+                "name": "pgadmin",
+                "url": "http://10.121.110.11"
+            }
+        ],
+        "prod": [
+            {
+                "name": "grafana",
+                "url": "http://prod.grafana.example.com"
+            }
+        ]
+    }
+}

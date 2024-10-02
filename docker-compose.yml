@@ -1,0 +1,26 @@
+services:
+  urler-frontend:
+    container_name: urler-frontend
+    build:
+      context: ./frontend
+    ports:
+      - 8423:8423
+
+  urler-backend:
+    container_name: urler-backend
+    build:
+      context: ./backend
+    volumes:
+      - ./backend/db.json:/app/db.json 
+    ports:
+      - "7956:7956" 
+    environment:
+      - DB_FILE_PATH=/app/db.json
+
+  urler-nginx:
+    image: nginx:1.26.2
+    container_name: urler-nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "6406:6406"
